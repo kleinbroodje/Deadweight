@@ -5,9 +5,26 @@ public partial class Player : CharacterBody3D
 {
 	public const float Speed = 5.0f;
 	public const float JumpVelocity = 4.5f;
+	public const float Sens = 0.003f;
 
-	// Get the gravity from the project settings to be synced with RigidBody nodes.
+	Camera3D camera;
+
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
+
+	public override void _Ready()
+	{
+		camera = GetNode<Camera3D>("Camera3D");
+	}
+
+	public override void _UnhandledInput(InputEvent @event)
+	{
+		if (@event is InputEventMouseMotion motion)
+		{
+			RotateY(-motion.Relative.X * Sens);
+			camera.RotateX(-motion.Relative.Y * Sens);
+			camera.Rotation = new Vector3(Mathf.Clamp(camera.Rotation.X, Mathf.DegToRad(-40), Mathf.DegToRad(60)), camera.Rotation.Y, camera.Rotation.Z);
+		}
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{

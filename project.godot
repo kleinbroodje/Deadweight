@@ -13,7 +13,11 @@ config_version=5
 config/name="Untitled Horror Game"
 run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [dotnet]
 
