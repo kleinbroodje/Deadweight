@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dyf1fkgkmvgqi"]
+
+[ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="1_7i2eo"]
+[ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="2_fiuhb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fiuhb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mn261"]
+
+[sub_resource type="Environment" id="Environment_7i2eo"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_fiuhb"]
+
+[sub_resource type="Compositor" id="Compositor_mn261"]
+
+[node name="Ocean" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("2_fiuhb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5573, 0)
+
+[node name="DeepOcean" parent="." instance=ExtResource("1_7i2eo")]
+far_edge = 4000
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 3.70498, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64756, 0)
+shape = SubResource("BoxShape3D_fiuhb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64756, 0)
+shape = SubResource("BoxShape3D_fiuhb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64521, 0)
+mesh = SubResource("BoxMesh_mn261")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7i2eo")
+camera_attributes = SubResource("CameraAttributesPhysical_fiuhb")
+compositor = SubResource("Compositor_mn261")
