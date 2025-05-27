@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Untitled Horror Game"
-run/main_scene="uid://dyf1fkgkmvgqi"
+run/main_scene="uid://c8sg13jj0qney"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 
 [display]
@@ -25,7 +25,7 @@ project/assembly_name="Untitled Horror Game"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/boujie_water_shader/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
@@ -58,3 +58,10 @@ jump={
 [physics]
 
 3d/default_gravity_vector=Vector3(2.08165e-12, -1, 2.08165e-12)
+
+[shader_globals]
+
+ocean_pos={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
