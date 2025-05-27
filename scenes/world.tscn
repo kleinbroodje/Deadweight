@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://h0l3qqgfdw0q"]
+[gd_scene load_steps=8 format=3 uid="uid://h0l3qqgfdw0q"]
 
 [ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="1_u4ggu"]
-[ext_resource type="Texture2D" uid="uid://bh8vap6f31jr" path="res://assets/Godot_icon.svg.png" id="2_rwgxs"]
+[ext_resource type="Texture2D" uid="uid://bh8vap6f31jr" path="res://resources/Godot_icon.svg.png" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://cvtrsybsqo4vt" path="res://resources/ship3.glb" id="3_4wyf3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_citxc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -29,7 +30,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_u4ggu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012327, 1.4469, 0.00534058)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4609, 8.74407, -10.2497)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 use_collision = true
@@ -38,3 +39,6 @@ size = Vector3(30, 0.05, 30)
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29236, 1.92582, 0)
 material_override = SubResource("StandardMaterial3D_4wyf3")
+
+[node name="ship3" parent="." instance=ExtResource("3_4wyf3")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -15.5841, 1.94846, 0.804824)

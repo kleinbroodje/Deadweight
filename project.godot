@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Untitled Horror Game"
-run/main_scene="uid://c8sg13jj0qney"
+run/main_scene="uid://h0l3qqgfdw0q"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 
 [display]
