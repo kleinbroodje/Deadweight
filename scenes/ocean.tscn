@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyf1fkgkmvgqi"]
+[gd_scene load_steps=9 format=3 uid="uid://dyf1fkgkmvgqi"]
 
 [ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="1_7i2eo"]
-[ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="2_fiuhb"]
+[ext_resource type="Shader" uid="uid://lx4pihsudj8m" path="res://scenes/ocean.gdshader" id="2_fiuhb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fiuhb"]
 
@@ -13,10 +13,32 @@
 
 [sub_resource type="Compositor" id="Compositor_mn261"]
 
-[node name="Ocean" type="Node3D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fiuhb"]
+shader = ExtResource("2_fiuhb")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
 
-[node name="Player" parent="." instance=ExtResource("2_fiuhb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5573, 0)
+[node name="Ocean" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0865631, 1.90735e-06, -0.0387115)
 
 [node name="DeepOcean" parent="." instance=ExtResource("1_7i2eo")]
 far_edge = 4000
@@ -40,3 +62,13 @@ mesh = SubResource("BoxMesh_mn261")
 environment = SubResource("Environment_7i2eo")
 camera_attributes = SubResource("CameraAttributesPhysical_fiuhb")
 compositor = SubResource("Compositor_mn261")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fiuhb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera3D" type="Camera3D" parent="."]
