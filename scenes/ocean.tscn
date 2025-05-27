@@ -1,42 +1,187 @@
+<<<<<<< HEAD
 [gd_scene load_steps=8 format=3 uid="uid://df80wg7h3vdci"]
+=======
+[gd_scene load_steps=40 format=3 uid="uid://c8sg13jj0qney"]
+>>>>>>> 31fdf7029a81247fd92e903cff1eece185bf93e7
 
 [ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="1_7i2eo"]
 [ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="2_fiuhb"]
+[ext_resource type="ArrayMesh" uid="uid://od24c1cyehcw" path="res://resources/ship3.obj" id="5_vjho5"]
+[ext_resource type="Shader" uid="uid://b6iiesqpinnr4" path="res://shaders/CustomOcean.gdshader" id="6_vjho5"]
+[ext_resource type="Script" uid="uid://cv06ybc5qyg85" path="res://scenes/CustomOcean.cs" id="7_4imn2"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fiuhb"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fiuhb"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_mn261"]
+[sub_resource type="Sky" id="Sky_mn261"]
+sky_material = SubResource("ProceduralSkyMaterial_fiuhb")
 
 [sub_resource type="Environment" id="Environment_7i2eo"]
+background_mode = 2
+sky = SubResource("Sky_mn261")
+ambient_light_source = 3
+reflected_light_source = 2
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_fiuhb"]
 
 [sub_resource type="Compositor" id="Compositor_mn261"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_a1ohp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ogne1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjho5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4imn2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5neuy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sup3w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46w5d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv676"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkfeh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ti71"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isiwr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkxcc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnddo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yc4ip"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmjiu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wj57i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_os0f8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkh6w"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ogne1"]
+points = PackedVector3Array(2.24537, 3.05817, 5.20479, -0.35541, -0.775747, -6.63379, -0.119018, 1.74343, -11.6127, -1.43268, 8.04921, 3.1026, -1.79264, 0.0382412, 4.256, 1.19415, 9.6243, -1.89029, -2.48439, 5.94692, -1.89029, 2.24537, 0.9548, -5.04274, 0.890239, -0.901449, 4.0765, -1.43268, 7.26058, -6.09301, -2.22146, 2.00594, -5.30449, 1.45659, 7.26058, -6.09301, -2.22146, 3.05817, 5.20479, 2.5083, 5.94692, -1.89029, 1.45659, 8.04921, 3.1026, -1.17024, 9.6243, -1.62855, 0.142932, 8.57316, 3.36435, -1.79264, 0.0382412, -4.88836, 1.35037, -0.497545, -5.15005, 1.65335, -0.175581, 4.62417, -1.0855, -0.751944, 3.87005, -0.119018, 7.78669, -6.09301, 0.142932, 2.00594, -11.6127, -2.22146, 0.9548, 1.00042, 2.24537, 0.9548, 1.00042, 2.24537, 2.00594, -5.30449, 0.381057, -0.800022, -6.64997, -0.119018, 9.88898, -1.89029, -1.0855, -0.751944, -4.91094, -1.6956, 5.68333, -6.09301, 1.71952, 5.68333, -6.09301, 0.142932, 1.74343, -11.6127)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ogne1"]
+size = Vector2(1000, 1000)
+subdivide_width = 1000
+subdivide_depth = 1000
+orientation = 1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vjho5"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4imn2"]
+seamless = true
+as_normal_map = true
+bump_strength = 1.5
+noise = SubResource("FastNoiseLite_vjho5")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4imn2"]
+noise_type = 3
+seed = 10
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5neuy"]
+seamless = true
+as_normal_map = true
+bump_strength = 1.5
+noise = SubResource("FastNoiseLite_4imn2")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5neuy"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sup3w"]
+seamless = true
+noise = SubResource("FastNoiseLite_5neuy")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_46w5d"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tv676"]
+noise = SubResource("FastNoiseLite_46w5d")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4imn2"]
+render_priority = 0
+shader = ExtResource("6_vjho5")
+shader_parameter/albedo = Color(0, 0.321569, 0.431373, 1)
+shader_parameter/albedo2 = Color(0, 0.47451, 0.764706, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_4imn2")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_5neuy")
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/wave_direction2 = Vector2(0, 1)
+shader_parameter/time_scale = 0.025
+shader_parameter/wave = SubResource("NoiseTexture2D_sup3w")
+shader_parameter/wave_bump = SubResource("NoiseTexture2D_tv676")
+shader_parameter/noise_scale = 10.0
+shader_parameter/height_scale = 1.0
+shader_parameter/color_deep = Color(0.259825, 0.574937, 0.562527, 1)
+shader_parameter/color_shallow = Color(0.352726, 0.549685, 0.736422, 1)
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = 1.5
+shader_parameter/edge_scale = -1.0
+shader_parameter/near = 1.0
+shader_parameter/far = 100.0
+shader_parameter/edge_color = Color(1, 1, 1, 1)
+
 [node name="Ocean" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_fiuhb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5573, 0)
+transform = Transform3D(-0.216423, 0, -0.9763, 0, 1, 0, 0.9763, 0, -0.216423, -19.1329, 0.864605, 0)
 
 [node name="DeepOcean" parent="." instance=ExtResource("1_7i2eo")]
+visible = false
 far_edge = 4000
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 3.70498, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64756, 0)
-shape = SubResource("BoxShape3D_fiuhb")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64756, 0)
-shape = SubResource("BoxShape3D_fiuhb")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64521, 0)
-mesh = SubResource("BoxMesh_mn261")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7i2eo")
 camera_attributes = SubResource("CameraAttributesPhysical_fiuhb")
 compositor = SubResource("Compositor_mn261")
+
+[node name="Cube" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.70162, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube"]
+mesh = SubResource("BoxMesh_a1ohp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube"]
+shape = SubResource("BoxShape3D_ogne1")
+
+[node name="Boat" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.97332, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.39368, 0)
+mesh = ExtResource("5_vjho5")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_vjho5")
+surface_material_override/1 = SubResource("StandardMaterial3D_4imn2")
+surface_material_override/2 = SubResource("StandardMaterial3D_5neuy")
+surface_material_override/3 = SubResource("StandardMaterial3D_sup3w")
+surface_material_override/4 = SubResource("StandardMaterial3D_46w5d")
+surface_material_override/5 = SubResource("StandardMaterial3D_tv676")
+surface_material_override/6 = SubResource("StandardMaterial3D_vkfeh")
+surface_material_override/7 = SubResource("StandardMaterial3D_6ti71")
+surface_material_override/8 = SubResource("StandardMaterial3D_isiwr")
+surface_material_override/9 = SubResource("StandardMaterial3D_pkxcc")
+surface_material_override/10 = SubResource("StandardMaterial3D_nnddo")
+surface_material_override/11 = SubResource("StandardMaterial3D_yc4ip")
+surface_material_override/12 = SubResource("StandardMaterial3D_tmjiu")
+surface_material_override/13 = SubResource("StandardMaterial3D_wj57i")
+surface_material_override/14 = SubResource("StandardMaterial3D_os0f8")
+surface_material_override/15 = SubResource("StandardMaterial3D_vkh6w")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Boat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.39368, 0)
+shape = SubResource("ConvexPolygonShape3D_ogne1")
+
+[node name="CustomOcean" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25124, 2.38419e-07, 0)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_ogne1")
+skeleton = NodePath("../DeepOcean")
+surface_material_override/0 = SubResource("ShaderMaterial_4imn2")
+script = ExtResource("7_4imn2")
