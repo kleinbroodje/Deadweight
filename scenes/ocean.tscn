@@ -1,5 +1,8 @@
 <<<<<<< HEAD
-[gd_scene load_steps=8 format=3 uid="uid://df80wg7h3vdci"]
+[gd_scene load_steps=9 format=3 uid="uid://dyf1fkgkmvgqi"]
+
+[ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="1_7i2eo"]
+[ext_resource type="Shader" uid="uid://lx4pihsudj8m" path="res://scenes/ocean.gdshader" id="2_fiuhb"]
 =======
 [gd_scene load_steps=40 format=3 uid="uid://c8sg13jj0qney"]
 >>>>>>> 31fdf7029a81247fd92e903cff1eece185bf93e7
@@ -9,6 +12,7 @@
 [ext_resource type="ArrayMesh" uid="uid://od24c1cyehcw" path="res://resources/ship3.obj" id="5_vjho5"]
 [ext_resource type="Shader" uid="uid://b6iiesqpinnr4" path="res://shaders/CustomOcean.gdshader" id="6_vjho5"]
 [ext_resource type="Script" uid="uid://cv06ybc5qyg85" path="res://scenes/CustomOcean.cs" id="7_4imn2"]
+>>>>>>> 31fdf7029a81247fd92e903cff1eece185bf93e7
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fiuhb"]
 
@@ -25,6 +29,34 @@ reflected_light_source = 2
 
 [sub_resource type="Compositor" id="Compositor_mn261"]
 
+<<<<<<< HEAD
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fiuhb"]
+shader = ExtResource("2_fiuhb")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[node name="Ocean" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0865631, 1.90735e-06, -0.0387115)
+=======
 [sub_resource type="BoxMesh" id="BoxMesh_a1ohp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ogne1"]
@@ -131,6 +163,7 @@ shader_parameter/edge_color = Color(1, 1, 1, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_fiuhb")]
 transform = Transform3D(-0.216423, 0, -0.9763, 0, 1, 0, 0.9763, 0, -0.216423, -19.1329, 0.864605, 0)
+>>>>>>> 31fdf7029a81247fd92e903cff1eece185bf93e7
 
 [node name="DeepOcean" parent="." instance=ExtResource("1_7i2eo")]
 visible = false
@@ -141,6 +174,17 @@ environment = SubResource("Environment_7i2eo")
 camera_attributes = SubResource("CameraAttributesPhysical_fiuhb")
 compositor = SubResource("Compositor_mn261")
 
+<<<<<<< HEAD
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fiuhb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera3D" type="Camera3D" parent="."]
+=======
 [node name="Cube" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.70162, 0)
 
@@ -185,3 +229,4 @@ mesh = SubResource("QuadMesh_ogne1")
 skeleton = NodePath("../DeepOcean")
 surface_material_override/0 = SubResource("ShaderMaterial_4imn2")
 script = ExtResource("7_4imn2")
+>>>>>>> 31fdf7029a81247fd92e903cff1eece185bf93e7
