@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyf1fkgkmvgqi"]
+[gd_scene load_steps=8 format=3 uid="uid://df80wg7h3vdci"]
 
 [ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="1_7i2eo"]
 [ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="2_fiuhb"]
