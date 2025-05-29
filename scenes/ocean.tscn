@@ -1,10 +1,10 @@
 [gd_scene load_steps=40 format=3 uid="uid://c8sg13jj0qney"]
 
-[ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="1_7i2eo"]
 [ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="2_fiuhb"]
-[ext_resource type="ArrayMesh" uid="uid://od24c1cyehcw" path="res://resources/ship3.obj" id="5_vjho5"]
+[ext_resource type="Script" uid="uid://bw1brvb7xh6an" path="res://scripts/Ship.cs" id="2_ogne1"]
+[ext_resource type="ArrayMesh" uid="uid://od24c1cyehcw" path="res://resources/ship.obj" id="3_ogne1"]
+[ext_resource type="Script" path="res://scripts/CustomOcean.cs" id="4_a1ohp"]
 [ext_resource type="Shader" uid="uid://b6iiesqpinnr4" path="res://shaders/CustomOcean.gdshader" id="6_vjho5"]
-[ext_resource type="Script" uid="uid://cv06ybc5qyg85" path="res://scenes/CustomOcean.cs" id="7_4imn2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fiuhb"]
 
@@ -126,11 +126,7 @@ shader_parameter/edge_color = Color(1, 1, 1, 1)
 [node name="Ocean" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_fiuhb")]
-transform = Transform3D(-0.216423, 0, -0.9763, 0, 1, 0, 0.9763, 0, -0.216423, -19.1329, 0.864605, 0)
-
-[node name="DeepOcean" parent="." instance=ExtResource("1_7i2eo")]
-visible = false
-far_edge = 4000
+transform = Transform3D(-0.216423, 0, -0.9763, 0, 1, 0, 0.9763, 0, -0.216423, -0.0966923, 4.88671, 2.34542)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7i2eo")
@@ -146,12 +142,13 @@ mesh = SubResource("BoxMesh_a1ohp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube"]
 shape = SubResource("BoxShape3D_ogne1")
 
-[node name="Boat" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.97332, 0)
+[node name="Ship" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.74748, 0)
+script = ExtResource("2_ogne1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Boat"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ship"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.39368, 0)
-mesh = ExtResource("5_vjho5")
+mesh = ExtResource("3_ogne1")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_vjho5")
 surface_material_override/1 = SubResource("StandardMaterial3D_4imn2")
@@ -170,14 +167,34 @@ surface_material_override/13 = SubResource("StandardMaterial3D_wj57i")
 surface_material_override/14 = SubResource("StandardMaterial3D_os0f8")
 surface_material_override/15 = SubResource("StandardMaterial3D_vkh6w")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Boat"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Ship"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.39368, 0)
 shape = SubResource("ConvexPolygonShape3D_ogne1")
+
+[node name="BuoyancyContainer" type="Node3D" parent="Ship"]
+
+[node name="Layer0-0" type="Node3D" parent="Ship/BuoyancyContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.742464, 3.38175, 4.32336)
+
+[node name="Layer0-1" type="Node3D" parent="Ship/BuoyancyContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.742, 3.382, 4.323)
+
+[node name="Layer0-2" type="Node3D" parent="Ship/BuoyancyContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.742, 3.382, -4.92313)
+
+[node name="Layer0-3" type="Node3D" parent="Ship/BuoyancyContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.742, 3.382, -4.923)
+
+[node name="Layer0-4" type="Node3D" parent="Ship/BuoyancyContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.146977, 3.37687, -6.60328)
+
+[node name="Layer0-5" type="Node3D" parent="Ship/BuoyancyContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147272, 3.377, -6.60284)
 
 [node name="CustomOcean" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25124, 2.38419e-07, 0)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_ogne1")
-skeleton = NodePath("../DeepOcean")
+skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_4imn2")
-script = ExtResource("7_4imn2")
+script = ExtResource("4_a1ohp")

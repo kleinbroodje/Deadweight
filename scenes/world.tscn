@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://h0l3qqgfdw0q"]
+[gd_scene load_steps=8 format=3 uid="uid://nfyg35flfmlg"]
 
 [ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="1_u4ggu"]
 [ext_resource type="Texture2D" uid="uid://bh8vap6f31jr" path="res://resources/Godot_icon.svg.png" id="2_rwgxs"]
