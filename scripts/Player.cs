@@ -35,11 +35,6 @@ public partial class Player : CharacterBody3D
         if (!IsOnFloor())
             velocity.Y -= gravity * (float)delta;
 
-        var depth = waterHeight - GlobalPosition.Y;
-        if (depth > 0)
-            Velocity += Vector3.Up * floatForce * gravity * depth;
-
-
         // Handle Jump.
         if (Input.IsActionJustPressed("jump") && IsOnFloor())
             velocity.Y = JumpVelocity;

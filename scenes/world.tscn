@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="1_u4ggu"]
 [ext_resource type="Texture2D" uid="uid://bh8vap6f31jr" path="res://resources/Godot_icon.svg.png" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://cvtrsybsqo4vt" path="res://resources/ship3.glb" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://cvtrsybsqo4vt" path="res://resources/ship.glb" id="3_4wyf3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_citxc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
