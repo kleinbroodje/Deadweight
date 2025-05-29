@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Untitled Horror Game"
+config/name="Deadweight"
 run/main_scene="uid://c8sg13jj0qney"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 
@@ -22,7 +22,7 @@ window/stretch/mode="viewport"
 
 [dotnet]
 
-project/assembly_name="Untitled Horror Game"
+project/assembly_name="Deadweight"
 
 [editor_plugins]
 

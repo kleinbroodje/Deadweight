@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Untitled Horror Game", "Untitled Horror Game.csproj", "{9E798C7F-82C1-4E67-9280-C4301FBFBC90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deadweight", "Deadweight.csproj", "{9E798C7F-82C1-4E67-9280-C4301FBFBC90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
