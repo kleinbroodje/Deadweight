@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cvtrsybsqo4vt"
+uid="uid://dyc8xdrl3gq1h"
 path="res://.godot/imported/ship.glb-0ca65b7521cc3c41b74aa107f4e3dde7.scn"
 
 [deps]
@@ -32,6 +32,22 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"meshes": {
+"ship_Cylinder_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://resources/ship_Cylinder_007.res"
+}
+},
+"nodes": {
+"PATH:Cylinder_007": {
+"physics/shape_type": 2
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

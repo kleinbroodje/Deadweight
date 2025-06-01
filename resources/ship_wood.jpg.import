@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh8vap6f31jr"
-path.s3tc="res://.godot/imported/Godot_icon.svg.png-12cb8a5bcf3a4d21106fee66fdb11826.s3tc.ctex"
+uid="uid://daqi4tmwfo6sd"
+path.s3tc="res://.godot/imported/ship_wood.jpg-4c8f23c6c65402a6c699c617910fcb14.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "612c0129c98e9b5b1fa8fdb981aada5e"
+}
 
 [deps]
 
-source_file="res://resources/Godot_icon.svg.png"
-dest_files=["res://.godot/imported/Godot_icon.svg.png-12cb8a5bcf3a4d21106fee66fdb11826.s3tc.ctex"]
+source_file="res://resources/ship_wood.jpg"
+dest_files=["res://.godot/imported/ship_wood.jpg-4c8f23c6c65402a6c699c617910fcb14.s3tc.ctex"]
 
 [params]
 
