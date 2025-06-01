@@ -90,7 +90,7 @@ shader_parameter/edge_color = Color(1, 1, 1, 1)
 [node name="Ocean" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_fiuhb")]
-transform = Transform3D(-0.216423, 0, -0.9763, 0, 1, 0, 0.9763, 0, -0.216423, -0.0966923, 7.26997, 2.34542)
+transform = Transform3D(-0.216423, 0, -0.9763, 0, 1.4, 0, 0.9763, 0, -0.216423, 7.78419, 7.26997, 2.34542)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7i2eo")
@@ -102,30 +102,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 script = ExtResource("2_ogne1")
 
 [node name="BuoyancyContainer" type="Node3D" parent="Ship"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08755, -2.84136, 12.0207)
 
 [node name="Layer2-0" type="Node3D" parent="Ship/BuoyancyContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.627, -1.746, 18.137)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98653, -1.48989, 18.2187)
 
 [node name="Layer2-1" type="Node3D" parent="Ship/BuoyancyContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.078, -1.746, 18.137)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25651, -1.49176, 18.2191)
 
 [node name="Layer2-2" type="Node3D" parent="Ship/BuoyancyContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.078, -1.746, -11.281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10989, -1.39396, -11.5448)
 
 [node name="Layer2-3" type="Node3D" parent="Ship/BuoyancyContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.627, -1.746, -11.281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04848, -1.49122, -11.5518)
 
 [node name="Layer2-4" type="Node3D" parent="Ship/BuoyancyContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.487, -1.746, -17.035)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.79189, -1.50513, -17.7035)
 
 [node name="Layer2-5" type="Node3D" parent="Ship/BuoyancyContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.937, -1.746, -17.035)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01924, -1.52384, -17.6491)
 
 [node name="Layer2-6" type="Node3D" parent="Ship/BuoyancyContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.787292, -1.74623, -19.5806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.732918, -1.45909, -20.5873)
 
 [node name="Layer2-7" type="Node3D" parent="Ship/BuoyancyContainer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34331, -1.74623, -19.5806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54113, -1.48623, -20.5835)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ship"]
 transform = Transform3D(0.252863, 0, 0, 0, 0.502911, 0, 0, 0, 0.252863, 0, 0, 0)
