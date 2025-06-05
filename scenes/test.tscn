@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://pgntuxj6772r"]
+[gd_scene load_steps=9 format=3 uid="uid://byp3qdwxd8n5u"]
 
+[ext_resource type="Script" uid="uid://cvw1lre10hx31" path="res://scripts/commons.gd" id="1_74lek"]
 [ext_resource type="PackedScene" uid="uid://bj1uqp1wii1h5" path="res://resources/ship.glb" id="1_bl13t"]
 [ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="2_iyx0m"]
+[ext_resource type="PackedScene" uid="uid://0txf6pvkyppp" path="res://resources/wheel.glb" id="3_iyx0m"]
+[ext_resource type="Script" uid="uid://dfhcbpydntf1t" path="res://scripts/Wheel.cs" id="5_j5jx5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bl13t"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -17,6 +20,8 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+script = ExtResource("1_74lek")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_74lek")
@@ -29,4 +34,17 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78642, 0, -3.66096)
 
 [node name="Player" parent="." instance=ExtResource("2_iyx0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1522, -3.97628, -12.4051)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0522, -3.37628, 0.694901)
+
+[node name="wheel" parent="." instance=ExtResource("3_iyx0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4814, -0.291797, -20.1748)
+script = ExtResource("5_j5jx5")
+
+[node name="UI" type="Node" parent="."]
+
+[node name="InfoText" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(4.26344, 1.91587)
+text = "asd"
+horizontal_alignment = 1

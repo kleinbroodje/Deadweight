@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="Deadweight"
-run/main_scene="uid://c8sg13jj0qney"
+run/main_scene="uid://byp3qdwxd8n5u"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+run/warnings/redundant_static_unload=1
+run/size/mode=0
 
 [display]
 
@@ -58,6 +60,7 @@ jump={
 
 [physics]
 
+3d/default_gravity=20.0
 3d/default_gravity_vector=Vector3(2.08165e-12, -1, 2.08165e-12)
 
 [shader_globals]
