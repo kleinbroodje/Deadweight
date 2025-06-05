@@ -87,7 +87,7 @@ shader_parameter/edge_color = Color(1, 1, 1, 1)
 [node name="Ocean" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_fiuhb")]
-transform = Transform3D(-0.216423, 0, -0.9763, 0, 1.4, 0, 0.9763, 0, -0.216423, 3.87726, 7.26997, 2.34542)
+transform = Transform3D(1, 0, 0, 0, 1.4, 0, 0, 0, 1, 1.75618, 7.26997, 2.34542)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7i2eo")
