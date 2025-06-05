@@ -15,6 +15,7 @@ public partial class Player : CharacterBody3D
     public override void _Ready()
     {
         camera = GetNode<Camera3D>("Camera3D");
+        FloorMaxAngle = Mathf.DegToRad(60);
     }
 
     public override void _UnhandledInput(InputEvent @event)
@@ -40,7 +41,6 @@ public partial class Player : CharacterBody3D
             velocity.Y = JumpVelocity;
 
         // Get the input direction and handle the movement/deceleration.
-        // As good practice, you should replace UI actions with custom gameplay actions.
         Vector2 inputDir = Input.GetVector("move_left", "move_right", "move_forward", "move_back");
         Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
         if (direction != Vector3.Zero)
