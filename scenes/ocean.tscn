@@ -126,7 +126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.732918, -1.45909, -20.5873
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54113, -1.48623, -20.5835)
 
 [node name="ship" parent="Ship" instance=ExtResource("3_ogne1")]
-transform = Transform3D(1, 0.000715585, 0, -0.000715585, 1, 0, 0, 0, 1, -0.0169392, 0, 0)
+transform = Transform3D(1, 0.000715585, 0, -0.000715585, 1, 0, 0, 0, 1, -0.0169392, 1.26597, 0)
 
 [node name="CustomOcean" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25124, 2.38419e-07, 0)
