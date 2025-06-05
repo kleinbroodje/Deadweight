@@ -138,7 +138,7 @@ transform = Transform3D(0.252863, 0, 0, 0, 0.502911, 0, 0, 0, 0.252863, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ogne1")
 
 [node name="CustomOcean" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25124, 2.38419e-07, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.266, 0.0509951, 0.0687246)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_ogne1")
 skeleton = NodePath("")
