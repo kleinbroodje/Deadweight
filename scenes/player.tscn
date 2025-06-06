@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b02v7i4yoyh35"]
+[gd_scene load_steps=5 format=3 uid="uid://b02v7i4yoyh35"]
 
 [ext_resource type="Script" uid="uid://fhkspvepvasx" path="res://scripts/Player.cs" id="1_bxagv"]
+[ext_resource type="Script" uid="uid://cd6jdgh52fjoh" path="res://scripts/Holder.cs" id="2_g2els"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_uuwmo"]
 height = 2.8
@@ -22,8 +23,9 @@ shape = SubResource("ConvexPolygonShape3D_3vyb7")
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.733, 0)
 
+[node name="Holder" type="Node3D" parent="Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.941656, -1.01578, -1.39644)
+script = ExtResource("2_g2els")
+
 [node name="Raycast" type="RayCast3D" parent="Camera"]
 target_position = Vector3(0, 0, -5)
-
-[node name="Holder" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.641656, 1.31722, -1.79644)
