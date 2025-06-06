@@ -20,6 +20,7 @@ run/size/mode=0
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]
@@ -29,6 +30,10 @@ project/assembly_name="Deadweight"
 [editor_plugins]
 
 enabled=PackedStringArray()
+
+[global_group]
+
+pickupable=""
 
 [input]
 

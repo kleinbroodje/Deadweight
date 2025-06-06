@@ -11,13 +11,14 @@ public partial class Player : CharacterBody3D
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 	public const float sensAt1280 = 0.0012f;
 	public float resMult = (float)ProjectSettings.GetSetting("display/window/size/viewport_width") / 1280.0f;
+	public bool holding = false;
 	public float sens;
 
 	// nodes
 	Camera3D camera;
 	RayCast3D raycast;
 	Node3D holder;
-	GodotObject heldObject;
+	Node3D heldObject;
 	Label infoText;
 
 	// methods
@@ -27,21 +28,25 @@ public partial class Player : CharacterBody3D
 		FloorMaxAngle = Mathf.DegToRad(60);
 		camera = GetNode<Camera3D>("Camera");
 		raycast = GetNode<RayCast3D>("Camera/Raycast");
-		holder = GetNode<Node3D>("Camera/Holder");
+		holder = GetNode<Node3D>("Holder");
 		infoText = GetParent().GetNode<Label>("UI/InfoText");
 	}
 
-	public override void _Input(InputEvent @event) {
+	public override void _Input(InputEvent @event)
+	{
 		if (@event is InputEventMouseMotion motion)
 		{
 			RotateY(-motion.Relative.X * sens);
 			camera.RotateX(-motion.Relative.Y * sens);
 			camera.Rotation = new Vector3(Mathf.Clamp(camera.Rotation.X, Mathf.DegToRad(-40), Mathf.DegToRad(60)), camera.Rotation.Y, camera.Rotation.Z);
-		} else if (@event is InputEventMouseButton mouseEvent) {
-			if (mouseEvent.Pressed && mouseEvent.ButtonIndex == MouseButton.Left) {
+		}
+		else if (@event is InputEventMouseButton mouseEvent)
+		{
+			if (mouseEvent.Pressed && mouseEvent.ButtonIndex == MouseButton.Left)
+			{
 				if (GetRaycast() != null)
 				{
-					Pickupable p = GetRaycast();
+					heldObject = GetRaycast();
 				}
 			}
 		}
@@ -53,15 +58,20 @@ public partial class Player : CharacterBody3D
 
 		if (GetRaycast() != null)
 		{
-			GD.Print(infoText);
 			infoText.Text = "Wheel";
 		}
 		else
 		{
 			infoText.Text = "";
 		}
+
+		if (heldObject != null)
+		{
+			heldObject.GlobalPosition = holder.GlobalPosition;
+			heldObject.GlobalRotation = holder.GlobalRotation;
+		}
 	}
-	
+
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector3 velocity = Velocity;
@@ -92,19 +102,14 @@ public partial class Player : CharacterBody3D
 		MoveAndSlide();
 	}
 
-	public Pickupable GetRaycast()
+	public Node3D GetRaycast()
 	{
-		var collider = raycast.GetCollider();
-		if (collider != null)
+		var collider = raycast.GetCollider() as StaticBody3D;
+		if (raycast.IsColliding())
 		{
-			Node nodeCollider = collider as Node;
-			if (nodeCollider != null)
+			if (collider.IsInGroup("pickupable"))
 			{
-				Pickupable p = nodeCollider as Pickupable ?? nodeCollider.GetParent() as Pickupable;
-				if (p != null)
-				{
-					return p;
-				}
+				return collider.GetParent() as Node3D;
 			}
 		}
 		return null;

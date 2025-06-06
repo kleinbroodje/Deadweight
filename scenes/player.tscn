@@ -22,8 +22,8 @@ shape = SubResource("ConvexPolygonShape3D_3vyb7")
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.733, 0)
 
-[node name="Holder" type="Node3D" parent="Camera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.733, 0)
-
 [node name="Raycast" type="RayCast3D" parent="Camera"]
 target_position = Vector3(0, 0, -5)
+
+[node name="Holder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.641656, 1.31722, -1.79644)
