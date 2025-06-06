@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 public partial class Player : CharacterBody3D
@@ -7,18 +8,23 @@ public partial class Player : CharacterBody3D
 	public const float jumpHeight = 7.0f;
 	public const float floatForce = 1.0f;
 	public const float waterHeight = 1.0f;
+	public const float wheelAccel = 0.07f;
+	public const float maxWheelVel = 2f;
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 	public const float sensAt1280 = 0.0012f;
 	public float resRatio = (float)ProjectSettings.GetSetting("display/window/size/viewport_width") / 1280.0f;
 	public float sens;
 	public float CameraMaxAngle;
 
-	// nodes
+	// necessary misc nodes
 	Camera3D camera;
 	RayCast3D raycast;
+	// UI
+	InfoText infoText;
+	// interactable nodes
 	Node3D holder;
 	RigidBody3D heldObject;
-	InfoText infoText;
+	RigidBody3D wheel;
 
 	// methods
 	public override void _Ready()
@@ -28,8 +34,9 @@ public partial class Player : CharacterBody3D
 		CameraMaxAngle = Mathf.DegToRad(90);
 		camera = GetNode<Camera3D>("Camera");
 		raycast = GetNode<RayCast3D>("Camera/Raycast");
+		infoText = GetNode<Label>("../UI/InfoText") as InfoText;
 		holder = GetNode<Node3D>("Camera/Holder");
-		// infoText = GetParent().GetNode<Label>("UI/InfoText") as InfoText;
+		wheel = GetNode<RigidBody3D>("../Wheel");
 	}
 
 	public override void _Input(InputEvent @event)
@@ -42,17 +49,24 @@ public partial class Player : CharacterBody3D
 		}
 		else if (Input.IsActionJustPressed("interact"))
 		{
-			if (GetRaycast() != null)
+			// interact
+			var ray = GetRaycast();
+			if (ray != null)
 			{
-				// check if something is already in hand
-				if (heldObject != null)
+				// check whether object is pickable or object is a special object
+				if (ray.IsInGroup("pickupable"))
 				{
-					// drop
-					heldObject.CollisionLayer = 1;
+					// its pickable, so its a rigidbody
+					// check if something is already in hand
+					if (heldObject != null)
+					{
+						// drop
+						heldObject.CollisionLayer = 1;
+					}
+					// get new pickupable and set it to see-through
+					heldObject = GetRaycast() as RigidBody3D;
+					heldObject.CollisionLayer = 2;
 				}
-				// get new pickupable and set it to see-through
-				heldObject = GetRaycast();
-				heldObject.CollisionLayer = 2;
 			}
 		}
 		else if (Input.IsActionJustPressed("drop"))
@@ -68,20 +82,39 @@ public partial class Player : CharacterBody3D
 	{
 		base._Process(delta);
 
-		Node3D r = GetRaycast();
-		// if (GetRaycast() != null)
-		// {
-		// 	infoText.Rename(r.Name);
-		// }
-		// else
-		// {
-		// 	infoText.Rename("");
-		// }
+		PhysicsBody3D r = GetRaycast();
+		if (r != null && r.Name != "Ship")
+		{
+			infoText.Rename(r.Name);
+		}
+		else
+		{
+			infoText.Rename("");
+		}
 
 		if (heldObject != null)
 		{
 			heldObject.GlobalPosition = holder.GlobalPosition;
 			heldObject.GlobalRotation = holder.GlobalRotation;
+		}
+
+		if (Input.IsActionPressed("steer_left") || Input.IsActionPressed("steer_right"))
+		{
+			var ray = GetRaycast();
+			if (ray as RigidBody3D == wheel)
+			{
+				// steer either way
+				if (Input.IsActionPressed("steer_left"))
+				{
+					wheel.AngularVelocity += new Vector3(0, 0, wheelAccel);
+					wheel.AngularVelocity = new Vector3(0, 0, Mathf.Min(wheel.AngularVelocity.Z, maxWheelVel));
+				}
+				else if (Input.IsActionPressed("steer_right"))
+				{
+					wheel.AngularVelocity += new Vector3(0, 0, -wheelAccel);
+					wheel.AngularVelocity = new Vector3(0, 0, Mathf.Max(wheel.AngularVelocity.Z, -maxWheelVel));
+				}
+			}
 		}
 	}
 
@@ -115,15 +148,11 @@ public partial class Player : CharacterBody3D
 		MoveAndSlide();
 	}
 
-	public RigidBody3D GetRaycast()
+	public PhysicsBody3D GetRaycast()
     {
         if (raycast.IsColliding())
 		{
-        	var collider = raycast.GetCollider() as RigidBody3D;
-			if (collider != null && collider.IsInGroup("pickupable"))
-			{
-				return collider;
-			}
+			return raycast.GetCollider() as PhysicsBody3D;
 		}
 		return null;
 	}

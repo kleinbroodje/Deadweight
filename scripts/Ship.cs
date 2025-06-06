@@ -19,6 +19,7 @@ public partial class Ship : RigidBody3D
 		gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 		customOcean = GetNode<MeshInstance3D>("../CustomOcean");
 		probes = GetNode<Node3D>("BuoyancyContainer").GetChildren();
+		Mass = 1;
 	}
 
 	public override void _PhysicsProcess(double delta)

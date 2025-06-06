@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 [gd_scene load_steps=22 format=4 uid="uid://byp3qdwxd8n5u"]
-=======
-[gd_scene load_steps=12 format=3 uid="uid://cx3oe0qf32rqv"]
->>>>>>> 00c6d222807ba51b2075ef68bef684840a5f4fc1
 
-[ext_resource type="Script" path="res://scripts/commons.gd" id="1_74lek"]
-[ext_resource type="PackedScene" uid="uid://bj1uqp1wii1h5" path="res://resources/ship.glb" id="1_bl13t"]
+[ext_resource type="Script" uid="uid://cvw1lre10hx31" path="res://scripts/commons.gd" id="1_74lek"]
+[ext_resource type="PackedScene" uid="uid://dqcr6a14vxv8e" path="res://resources/ship.glb" id="1_bl13t"]
 [ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="2_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://0txf6pvkyppp" path="res://resources/decor/wheel.glb" id="3_iyx0m"]
 [ext_resource type="Script" uid="uid://p5rhh27vr52i" path="res://scripts/InfoText.cs" id="5_at5dv"]
@@ -207,6 +203,7 @@ scale = Vector2(2.0014, 2.00691)
 text = "Info Text"
 label_settings = SubResource("LabelSettings_lpvoh")
 script = ExtResource("5_at5dv")
+metadata/_edit_use_anchors_ = true
 
 [node name="wheel" parent="." instance=ExtResource("3_iyx0m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3, -6)
