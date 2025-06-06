@@ -29,7 +29,7 @@ public partial class Player : CharacterBody3D
 		camera = GetNode<Camera3D>("Camera");
 		raycast = GetNode<RayCast3D>("Camera/Raycast");
 		holder = GetNode<Node3D>("Camera/Holder");
-		infoText = GetParent().GetNode<Label>("UI/InfoText") as InfoText;
+		// infoText = GetParent().GetNode<Label>("UI/InfoText") as InfoText;
 	}
 
 	public override void _Input(InputEvent @event)
@@ -69,22 +69,22 @@ public partial class Player : CharacterBody3D
 		base._Process(delta);
 
 		Node3D r = GetRaycast();
-		if (GetRaycast() != null)
-		{
-			infoText.Rename(r.Name);
-		}
-		else
-		{
-			infoText.Rename("");
-		}
+		// if (GetRaycast() != null)
+		// {
+		// 	infoText.Rename(r.Name);
+		// }
+		// else
+		// {
+		// 	infoText.Rename("");
+		// }
 
 		if (heldObject != null)
-        {
-            heldObject.GlobalPosition = holder.GlobalPosition;
-            heldObject.GlobalRotation = holder.GlobalRotation;
-        }
+		{
+			heldObject.GlobalPosition = holder.GlobalPosition;
+			heldObject.GlobalRotation = holder.GlobalRotation;
+		}
 	}
-	
+
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector3 velocity = Velocity;
@@ -125,6 +125,6 @@ public partial class Player : CharacterBody3D
 				return collider;
 			}
 		}
-        return null;
-    }
+		return null;
+	}
 }
