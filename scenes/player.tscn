@@ -24,7 +24,7 @@ shape = SubResource("ConvexPolygonShape3D_3vyb7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.733, 0)
 
 [node name="Holder" type="Node3D" parent="Camera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.941656, -1.01578, -1.39644)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.941656, -0.71578, -1.59644)
 script = ExtResource("2_g2els")
 
 [node name="Raycast" type="RayCast3D" parent="Camera"]

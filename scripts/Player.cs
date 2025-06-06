@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class Player : CharacterBody3D
 {
@@ -18,7 +17,7 @@ public partial class Player : CharacterBody3D
 	Camera3D camera;
 	RayCast3D raycast;
 	Node3D holder;
-	Node3D heldObject;
+	RigidBody3D heldObject;
 	InfoText infoText;
 
 	// methods
@@ -49,16 +48,18 @@ public partial class Player : CharacterBody3D
 				if (heldObject != null)
 				{
 					// drop
-					heldObject.GetNode<StaticBody3D>("Hitbox").CollisionLayer = 1;
+					heldObject.CollisionLayer = 1;
 				}
 				// get new pickupable and set it to see-through
 				heldObject = GetRaycast();
-				heldObject.GetNode<StaticBody3D>("Hitbox").CollisionLayer = 2;
+				heldObject.CollisionLayer = 2;
 			}
 		}
 		else if (Input.IsActionJustPressed("drop"))
 		{
-			heldObject.GetNode<StaticBody3D>("Hitbox").CollisionLayer = 1;
+			heldObject.CollisionLayer = 1;
+			Vector3 forward = -camera.GlobalTransform.Basis.Z.Normalized();
+			heldObject.LinearVelocity = 3 * forward + 4 * Vector3.Up;
 			heldObject = null;
 		}
 	}
@@ -114,14 +115,14 @@ public partial class Player : CharacterBody3D
 		MoveAndSlide();
 	}
 
-	public Node3D GetRaycast()
+	public RigidBody3D GetRaycast()
     {
-        var collider = raycast.GetCollider() as Node3D;
         if (raycast.IsColliding())
 		{
-			if (collider.IsInGroup("pickupable"))
+        	var collider = raycast.GetCollider() as RigidBody3D;
+			if (collider != null && collider.IsInGroup("pickupable"))
 			{
-				return collider.GetParent() as Node3D;
+				return collider;
 			}
 		}
         return null;
