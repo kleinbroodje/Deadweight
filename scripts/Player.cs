@@ -5,11 +5,11 @@ public partial class Player : CharacterBody3D
 {
 	// constants
 	public const float walkSpeed = 5.0f;
+	public const float maxWheelVel = 2f;
 	public const float jumpHeight = 7.0f;
 	public const float floatForce = 1.0f;
 	public const float waterHeight = 1.0f;
 	public const float wheelAccel = 0.07f;
-	public const float maxWheelVel = 2f;
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 	public const float sensAt1280 = 0.0012f;
 	public float resRatio = (float)ProjectSettings.GetSetting("display/window/size/viewport_width") / 1280.0f;
@@ -36,7 +36,7 @@ public partial class Player : CharacterBody3D
 		raycast = GetNode<RayCast3D>("Camera/Raycast");
 		infoText = GetNode<Label>("../UI/InfoText") as InfoText;
 		holder = GetNode<Node3D>("Camera/Holder");
-		wheel = GetNode<RigidBody3D>("../Wheel");
+		wheel = GetNode<Wheel>("../Wheel");
 	}
 
 	public override void _Input(InputEvent @event)
@@ -83,7 +83,7 @@ public partial class Player : CharacterBody3D
 		base._Process(delta);
 
 		PhysicsBody3D r = GetRaycast();
-		if (r != null && r.Name != "Ship")
+		if (r != null && (r.IsInGroup("pickupable") || r.Name == "Wheel"))
 		{
 			infoText.Rename(r.Name);
 		}
@@ -103,16 +103,22 @@ public partial class Player : CharacterBody3D
 			var ray = GetRaycast();
 			if (ray as RigidBody3D == wheel)
 			{
+				// get the local Z axis of the wheel
+				Vector3 localZ = wheel.GlobalTransform.Basis.Z.Normalized();
+
 				// steer either way
 				if (Input.IsActionPressed("steer_left"))
 				{
-					wheel.AngularVelocity += new Vector3(0, 0, wheelAccel);
-					wheel.AngularVelocity = new Vector3(0, 0, Mathf.Min(wheel.AngularVelocity.Z, maxWheelVel));
+					wheel.AngularVelocity += localZ * wheelAccel;
 				}
 				else if (Input.IsActionPressed("steer_right"))
 				{
-					wheel.AngularVelocity += new Vector3(0, 0, -wheelAccel);
-					wheel.AngularVelocity = new Vector3(0, 0, Mathf.Max(wheel.AngularVelocity.Z, -maxWheelVel));
+
+					wheel.AngularVelocity += localZ * -wheelAccel; ;
+				}
+				if (wheel.AngularVelocity.Length() > maxWheelVel)
+				{
+					wheel.AngularVelocity = wheel.AngularVelocity.Normalized() * maxWheelVel;
 				}
 			}
 		}
@@ -149,8 +155,8 @@ public partial class Player : CharacterBody3D
 	}
 
 	public PhysicsBody3D GetRaycast()
-    {
-        if (raycast.IsColliding())
+	{
+		if (raycast.IsColliding())
 		{
 			return raycast.GetCollider() as PhysicsBody3D;
 		}

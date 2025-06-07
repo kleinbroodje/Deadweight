@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://c8sg13jj0qney"]
+[gd_scene load_steps=56 format=4 uid="uid://c8sg13jj0qney"]
 
 [ext_resource type="Script" uid="uid://cn5fe1ntajd11" path="res://scripts/Ocean.gd" id="1_sup3w"]
 [ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="2_fiuhb"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://p5rhh27vr52i" path="res://scripts/InfoText.cs" id="8_sup3w"]
 [ext_resource type="Script" uid="uid://cvvr8v1bsi4fa" path="res://scripts/Wheel.cs" id="8_tv676"]
 [ext_resource type="Texture2D" uid="uid://omwujpohw7w0" path="res://resources/decor/wheel_Wood093_4K-JPG_Color.jpg" id="10_46w5d"]
+[ext_resource type="PackedScene" uid="uid://bwjoef85kaur7" path="res://resources/dock.glb" id="12_vkfeh"]
+[ext_resource type="PackedScene" uid="uid://c6e4mfdq3qojk" path="res://scenes/crate.tscn" id="13_6ti71"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fiuhb"]
 
@@ -506,8 +508,6 @@ shape = SubResource("ConvexPolygonShape3D_x7e5j")
 
 [node name="Wheel" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.47894, -17)
-axis_lock_angular_x = true
-axis_lock_angular_y = true
 mass = 0.001
 script = ExtResource("8_tv676")
 
@@ -582,3 +582,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28735, 0, -10.847)
 
 [node name="Layer2-7" type="Node3D" parent="Ship/BuoyancyContainer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.858265, 0, -10.8114)
+
+[node name="dock" parent="." instance=ExtResource("12_vkfeh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.731, 1.18875, -0.992328)
+
+[node name="crate" parent="." instance=ExtResource("13_6ti71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1581, 4.51996, 0.932846)

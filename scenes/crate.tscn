@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=4 uid="uid://c6e4mfdq3qojk"]
+
+[ext_resource type="Texture2D" uid="uid://bifjtvltrebm1" path="res://resources/crate_crate.jpg" id="1_b66cd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kdhk"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_b66cd")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_l4kcu"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cq8sb"]
+resource_name = "crate_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("4b+pqv///3///6mq4b//f8R//3/hv1RV4b//f8R/VFXEf///4b9U1eG////Ef1TVpj+pqsR//3/Ef6mqpj//f8R/qarhv/9/4b+pqsR//3/Ef1TV4b+pquG/VNXEf6mq"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_3kdhk"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(4.02187, 6.04366, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f///////1TV/////wAAVNX//wAA//9U1QAAAAAAAP///////wAA//8AAP//AAD/////AAAAAP///3//v/9//7//f/+//3//v/////////////////////9U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_l4kcu")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b66cd"]
+points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
+
+[node name="crate" type="RigidBody3D" groups=["pickupable"]]
+
+[node name="crate" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.869413, 0, 0, 0, 0.869413, 0, 0, 0, 0.869413, 0, 0, 0)
+mesh = SubResource("ArrayMesh_cq8sb")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.869413, 0, 0, 0, 0.869413, 0, 0, 0, 0.869413, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_b66cd")

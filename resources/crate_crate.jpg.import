@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b48siqv47fnka"
-path.s3tc="res://.godot/imported/ship_cloth.jpg-f1b5e45ba8be767f76ebfcb0a34f4c91.s3tc.ctex"
+uid="uid://bifjtvltrebm1"
+path.s3tc="res://.godot/imported/crate_crate.jpg-21a9e8818c57cf4bf187efa5c86a28e4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cdcf17ce5196dfdc146f9666314eadd3"
+"md5": "271642eddb1b5b7520082f632b12d716"
 }
 
 [deps]
 
-source_file="res://resources/ship_cloth.jpg"
-dest_files=["res://.godot/imported/ship_cloth.jpg-f1b5e45ba8be767f76ebfcb0a34f4c91.s3tc.ctex"]
+source_file="res://resources/crate_crate.jpg"
+dest_files=["res://.godot/imported/crate_crate.jpg-21a9e8818c57cf4bf187efa5c86a28e4.s3tc.ctex"]
 
 [params]
 
