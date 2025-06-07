@@ -44,12 +44,13 @@ shadow_mesh = SubResource("ArrayMesh_l4kcu")
 points = PackedVector3Array(-1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, -1, 1, -1)
 
 [node name="crate" type="RigidBody3D" groups=["pickupable"]]
+mass = 0.03
 
 [node name="crate" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.869413, 0, 0, 0, 0.869413, 0, 0, 0, 0.869413, 0, 0, 0)
+transform = Transform3D(0.574, 0, 0, 0, 0.574, 0, 0, 0, 0.574, 0, 0, 0)
 mesh = SubResource("ArrayMesh_cq8sb")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.869413, 0, 0, 0, 0.869413, 0, 0, 0, 0.869413, 0, 0, 0)
+transform = Transform3D(0.564, 0, 0, 0, 0.564, 0, 0, 0, 0.564, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_b66cd")

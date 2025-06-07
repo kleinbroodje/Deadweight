@@ -24,7 +24,7 @@ public partial class Player : CharacterBody3D
 	// interactable nodes
 	Node3D holder;
 	RigidBody3D heldObject;
-	RigidBody3D wheel;
+	Wheel wheel;
 
 	// methods
 	public override void _Ready()
@@ -36,7 +36,7 @@ public partial class Player : CharacterBody3D
 		raycast = GetNode<RayCast3D>("Camera/Raycast");
 		infoText = GetNode<Label>("../UI/InfoText") as InfoText;
 		holder = GetNode<Node3D>("Camera/Holder");
-		wheel = GetNode<Wheel>("../Wheel");
+		wheel = GetNode<Wheel>("../Ship/Wheel");
 	}
 
 	public override void _Input(InputEvent @event)
@@ -49,7 +49,16 @@ public partial class Player : CharacterBody3D
 		}
 		else if (Input.IsActionJustPressed("interact"))
 		{
-			// interact
+			// first, if there is anything in hand, drop it
+			if (heldObject != null)
+			{
+				heldObject.CollisionLayer = 1;
+				Vector3 forward = -camera.GlobalTransform.Basis.Z.Normalized();
+				heldObject.LinearVelocity = 3 * forward + 4 * Vector3.Up;
+				heldObject = null;
+			}
+
+			// now you can check whether we can pick something up
 			var ray = GetRaycast();
 			if (ray != null)
 			{
@@ -69,58 +78,34 @@ public partial class Player : CharacterBody3D
 				}
 			}
 		}
-		else if (Input.IsActionJustPressed("drop"))
-		{
-			heldObject.CollisionLayer = 1;
-			Vector3 forward = -camera.GlobalTransform.Basis.Z.Normalized();
-			heldObject.LinearVelocity = 3 * forward + 4 * Vector3.Up;
-			heldObject = null;
-		}
 	}
 
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
 
+		// check if the ray hits an object
 		PhysicsBody3D r = GetRaycast();
-		if (r != null && (r.IsInGroup("pickupable") || r.Name == "Wheel"))
+		if (r != null && r.IsInGroup("pickupable"))
 		{
-			infoText.Rename(r.Name);
+			// ray hits pickupable physics object
+			infoText.Rename($"{r.Name}\n<F> to pick up");
+		}
+		else if (r is IDescription descib)
+		{
+			// ray hits a non-physics object that still has displayed info
+			infoText.Rename(descib.Description());
 		}
 		else
 		{
-			infoText.Rename("");
+			// ray hits nothing, so show no text
+			infoText.Rename(" ");
 		}
 
 		if (heldObject != null)
 		{
 			heldObject.GlobalPosition = holder.GlobalPosition;
 			heldObject.GlobalRotation = holder.GlobalRotation;
-		}
-
-		if (Input.IsActionPressed("steer_left") || Input.IsActionPressed("steer_right"))
-		{
-			var ray = GetRaycast();
-			if (ray as RigidBody3D == wheel)
-			{
-				// get the local Z axis of the wheel
-				Vector3 localZ = wheel.GlobalTransform.Basis.Z.Normalized();
-
-				// steer either way
-				if (Input.IsActionPressed("steer_left"))
-				{
-					wheel.AngularVelocity += localZ * wheelAccel;
-				}
-				else if (Input.IsActionPressed("steer_right"))
-				{
-
-					wheel.AngularVelocity += localZ * -wheelAccel; ;
-				}
-				if (wheel.AngularVelocity.Length() > maxWheelVel)
-				{
-					wheel.AngularVelocity = wheel.AngularVelocity.Normalized() * maxWheelVel;
-				}
-			}
 		}
 	}
 

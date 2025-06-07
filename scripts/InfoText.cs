@@ -17,6 +17,7 @@ public partial class InfoText : Label
 	public void Rename(StringName name)
 	{
 		Text = name;
-		Position = new Vector2(DisplayServer.WindowGetSize().X / 2 - Size.X / 2, DisplayServer.WindowGetSize().Y * (5.0f / 7.0f));
+		Vector2 size = GetMinimumSize();
+		Position = new Vector2(DisplayServer.WindowGetSize().X / 2 - size.X / 2, DisplayServer.WindowGetSize().Y * (5.0f / 7.0f));
 	}
 }
