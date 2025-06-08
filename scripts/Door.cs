@@ -34,9 +34,13 @@ public partial class Door : StaticBody3D, IDescription
         }
         else
         {
-            if (hinge.Rotation.Y >= 0)
+            if (hinge.Rotation.Y > 0)
             {
                 hinge.Rotation -= new Vector3(0, Mathf.DegToRad(angleVel), 0);
+            }
+            else
+            {
+                hinge.Rotation = new Vector3(0, 0, 0); // reset to closed position
             }
         }
     }

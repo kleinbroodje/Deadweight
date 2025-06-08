@@ -86,12 +86,15 @@ shadow_mesh = SubResource("ArrayMesh_tw883")
 points = PackedVector3Array(-1.10712, -1.6739, -0.175643, -1.10712, -1.6739, 0.175643, -1.10712, 1.6739, -0.175643, 1.10712, -1.6739, -0.175643, 1.10712, -1.6739, 0.175643, -1.10712, 1.6739, 0.175643, 1.10712, 1.6739, -0.175643, 1.10712, 1.6739, 0.175643)
 
 [node name="Door" type="Node3D"]
+transform = Transform3D(1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Hinge" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09609, 0, 0.16251)
 
 [node name="Door" type="StaticBody3D" parent="Hinge"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.09609, 0, -0.16251)
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_uvdjg")
 
 [node name="door" type="MeshInstance3D" parent="Hinge/Door"]

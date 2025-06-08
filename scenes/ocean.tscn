@@ -516,6 +516,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57893, 8.23909, -5.54551)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 script = ExtResource("2_ogne1")
 
+[node name="Door" parent="Ship" instance=ExtResource("14_isiwr")]
+transform = Transform3D(1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.56792, 7.67814)
+
 [node name="ship" type="MeshInstance3D" parent="Ship"]
 transform = Transform3D(0.252863, 0, 0, 0, 0.502911, 0, 0, 0, 0.252863, 0, 2.24773e-05, 3.63814e-06)
 mesh = SubResource("ArrayMesh_6ti71")
@@ -580,9 +583,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ship/Wheel"]
 transform = Transform3D(0.829293, 0, 0, 0, 0.829293, 0, 0, 0, 0.0632295, 0.00107145, -0.0117483, 0.00256729)
 shape = SubResource("ConvexPolygonShape3D_rplsk")
-
-[node name="Door" parent="Ship" instance=ExtResource("14_isiwr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4472, -7.60356, -3.16223)
 
 [node name="dock" parent="." instance=ExtResource("12_vkfeh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.731, 1.18875, -0.992328)
