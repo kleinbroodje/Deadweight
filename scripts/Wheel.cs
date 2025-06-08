@@ -28,7 +28,7 @@ public partial class Wheel : StaticBody3D, IDescription
 		if (Input.IsActionPressed("steer_left") || Input.IsActionPressed("steer_right"))
 		{
 			var ray = (player as Player).GetRaycast();
-			if (ray.Name == Name)
+			if (ray != null && ray.Name == Name)
 			{
 				// get the local Z axis of the wheel
 				if (Input.IsActionPressed("steer_left"))

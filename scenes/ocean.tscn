@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://c8sg13jj0qney"]
+[gd_scene load_steps=57 format=4 uid="uid://c8sg13jj0qney"]
 
 [ext_resource type="Script" uid="uid://cn5fe1ntajd11" path="res://scripts/Ocean.gd" id="1_sup3w"]
 [ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="2_fiuhb"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://omwujpohw7w0" path="res://resources/decor/wheel_Wood093_4K-JPG_Color.jpg" id="10_46w5d"]
 [ext_resource type="PackedScene" uid="uid://bwjoef85kaur7" path="res://resources/dock.glb" id="12_vkfeh"]
 [ext_resource type="PackedScene" uid="uid://c6e4mfdq3qojk" path="res://scenes/crate.tscn" id="13_6ti71"]
+[ext_resource type="PackedScene" uid="uid://d11a2h5kx8vpu" path="res://scenes/door.tscn" id="14_isiwr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fiuhb"]
 
@@ -579,6 +580,9 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ship/Wheel"]
 transform = Transform3D(0.829293, 0, 0, 0, 0.829293, 0, 0, 0, 0.0632295, 0.00107145, -0.0117483, 0.00256729)
 shape = SubResource("ConvexPolygonShape3D_rplsk")
+
+[node name="Door" parent="Ship" instance=ExtResource("14_isiwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4472, -7.60356, -3.16223)
 
 [node name="dock" parent="." instance=ExtResource("12_vkfeh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.731, 1.18875, -0.992328)
