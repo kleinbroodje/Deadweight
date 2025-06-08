@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://xcet7ek4csia"
-path="res://.godot/imported/bracelet.glb-cae251110d731aa347dfae4645c64a2d.scn"
+uid="uid://bc67cytwoybog"
+path="res://.godot/imported/trapdoor.glb-b529c9d06a6ebd304bcbc90c55adb882.scn"
 
 [deps]
 
-source_file="res://resources/bracelet.glb"
-dest_files=["res://.godot/imported/bracelet.glb-cae251110d731aa347dfae4645c64a2d.scn"]
+source_file="res://resources/ship/trapdoor.glb"
+dest_files=["res://.godot/imported/trapdoor.glb-b529c9d06a6ebd304bcbc90c55adb882.scn"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh4g0kdo2v8yl"
-path.s3tc="res://.godot/imported/door_door_wood.jpg-a3b15dcf696e5b8321a514b56c793cc8.s3tc.ctex"
+uid="uid://bey7kskopafvc"
+path.s3tc="res://.godot/imported/trapdoor_door_wood.jpg-4b330c38a0017bf9ec8c37a4d67cf046.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://resources/door_door_wood.jpg"
-dest_files=["res://.godot/imported/door_door_wood.jpg-a3b15dcf696e5b8321a514b56c793cc8.s3tc.ctex"]
+source_file="res://resources/ship/trapdoor_door_wood.jpg"
+dest_files=["res://.godot/imported/trapdoor_door_wood.jpg-4b330c38a0017bf9ec8c37a4d67cf046.s3tc.ctex"]
 
 [params]
 
