@@ -1,17 +1,21 @@
 using Godot;
 using System;
+using System.Reflection.Metadata.Ecma335;
 
 public partial class Door : StaticBody3D, IDescription
 {
     Node3D hinge;
     bool toggle = false;
     CharacterBody3D player;
-    float maxAngle = 145f;
-    float angleVel = 4f;
+    float maxAngle;
+    float angleVel;
+
     public override void _Ready()
     {
         player = GetNode<CharacterBody3D>("/root/Ocean/Player");
         hinge = GetNode<Node3D>("..");
+        maxAngle = (float)GetMeta("maxAngle");
+        angleVel = (float)GetMeta("angleVel");
     }
     public string Description()
     {
