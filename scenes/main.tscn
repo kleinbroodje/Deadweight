@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfct2b326i3cs"]
+
+[ext_resource type="PackedScene" uid="uid://c8sg13jj0qney" path="res://scenes/ocean.tscn" id="1_sugp2"]
+[ext_resource type="FontFile" uid="uid://dnv0ewd5adeof" path="res://resources/fonts/vcr.ttf" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://p5rhh27vr52i" path="res://scripts/InfoText.cs" id="3_tbgi4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tefeu"]
+font = ExtResource("2_jyhfs")
+
+[node name="Main" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+stretch = true
+stretch_shrink = 3
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(426, 240)
+render_target_update_mode = 4
+
+[node name="Ocean" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_sugp2")]
+
+[node name="UI" type="Node" parent="CanvasLayer"]
+
+[node name="InfoText" type="Label" parent="CanvasLayer/UI"]
+texture_filter = 1
+offset_right = 47.0
+offset_bottom = 23.0
+scale = Vector2(2, 2.006)
+text = "
+"
+label_settings = SubResource("LabelSettings_tefeu")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_tbgi4")

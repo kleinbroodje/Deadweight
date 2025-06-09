@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Deadweight"
-run/main_scene="uid://c8sg13jj0qney"
+run/main_scene="uid://cfct2b326i3cs"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 run/warnings/redundant_static_unload=1
 run/size/mode=0

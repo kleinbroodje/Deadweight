@@ -6,7 +6,6 @@ public partial class InfoText : Label
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		// Recenter();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,6 +16,6 @@ public partial class InfoText : Label
 	public void Rename(StringName name)
 	{
 		Text = name;
-		GlobalPosition = new Vector2(DisplayServer.WindowGetSize().X / 2 - Size.X * Scale.X / 2, DisplayServer.WindowGetSize().Y * (5.0f / 7.0f));
+		GlobalPosition = new Vector2(GetViewport().GetVisibleRect().Size.X / 2 - Size.X * Scale.X / 2, GetViewport().GetVisibleRect().Size.Y * (5.0f / 7.0f));
 	}
 }

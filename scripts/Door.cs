@@ -17,7 +17,7 @@ public partial class Door : StaticBody3D, IDescription
 
     public override void _Ready()
     {
-        player = GetNode<CharacterBody3D>("/root/Ocean/Player");
+        player = GetNode<CharacterBody3D>("../../../../Player");
         hinge = GetNode<Node3D>("..");
         maxAngle = (float)GetMeta("maxAngle");
         angleVel = (float)GetMeta("angleVel");

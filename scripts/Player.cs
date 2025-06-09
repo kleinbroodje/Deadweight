@@ -34,7 +34,7 @@ public partial class Player : CharacterBody3D
 		CameraMaxAngle = Mathf.DegToRad(90);
 		camera = GetNode<Camera3D>("Camera");
 		raycast = GetNode<RayCast3D>("Camera/Raycast");
-		infoText = GetNode<Label>("../UI/InfoText") as InfoText;
+		infoText = GetNode<Label>("/root/Main/CanvasLayer/UI/InfoText") as InfoText;
 		holder = GetNode<Node3D>("Camera/Holder");
 		wheel = GetNode<Wheel>("../Ship/Wheel");
 	}
