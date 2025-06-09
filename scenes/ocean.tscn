@@ -638,7 +638,8 @@ script = ExtResource("4_a1ohp")
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 23.0
-scale = Vector2(2.0014, 2.00691)
+scale = Vector2(2, 2.006)
+text = "hello"
 label_settings = SubResource("LabelSettings_lpvoh")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -646,6 +647,8 @@ script = ExtResource("8_sup3w")
 
 [node name="Bracelet" type="RigidBody3D" parent="." groups=["pickupable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0464, 8.74796, -8.66857)
+collision_layer = 5
+collision_mask = 5
 mass = 0.001
 
 [node name="Sapphire" type="MeshInstance3D" parent="Bracelet"]
@@ -676,7 +679,7 @@ transform = Transform3D(0.533041, 0, 0, 0, 0.533041, 0, 0, 0, 0.0588819, 0, 0, 0
 shape = SubResource("ConvexPolygonShape3D_x7e5j")
 
 [node name="Player" parent="." instance=ExtResource("2_fiuhb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57893, 8.23909, -5.54551)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.2382, 8.23909, -1.71277)
 
 [node name="Ship" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
