@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfct2b326i3cs"]
+[gd_scene load_steps=5 format=3 uid="uid://booedb1qseycn"]
 
 [ext_resource type="PackedScene" uid="uid://c8sg13jj0qney" path="res://scenes/ocean.tscn" id="1_sugp2"]
 [ext_resource type="FontFile" uid="uid://dnv0ewd5adeof" path="res://resources/fonts/vcr.ttf" id="2_jyhfs"]
@@ -12,6 +12,7 @@ font = ExtResource("2_jyhfs")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,14 +20,16 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 stretch = true
-stretch_shrink = 3
+stretch_shrink = 4
 
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(426, 240)
+canvas_item_default_texture_filter = 0
+size = Vector2i(480, 270)
 render_target_update_mode = 4
 
 [node name="Ocean" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3173, 0.528269, 2.43252)
 
 [node name="UI" type="Node" parent="CanvasLayer"]
 

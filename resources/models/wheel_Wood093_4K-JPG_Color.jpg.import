@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp1up3otv84uc"
-path.s3tc="res://.godot/imported/door_wood.jpg-f0706dd5c572a86526ed239729900e30.s3tc.ctex"
+uid="uid://cs54msix8fjad"
+path.s3tc="res://.godot/imported/wheel_Wood093_4K-JPG_Color.jpg-508b7ec099d28d1bb231d22b91c271e7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "bcddf9cc2e68f99665cb81b1112e69bb"
+"md5": "0dc25f5d281fefbc65f51f234d223925"
 }
 
 [deps]
 
-source_file="res://resources/textures/door_wood.jpg"
-dest_files=["res://.godot/imported/door_wood.jpg-f0706dd5c572a86526ed239729900e30.s3tc.ctex"]
+source_file="res://resources/models/wheel_Wood093_4K-JPG_Color.jpg"
+dest_files=["res://.godot/imported/wheel_Wood093_4K-JPG_Color.jpg-508b7ec099d28d1bb231d22b91c271e7.s3tc.ctex"]
 
 [params]
 

@@ -14,7 +14,6 @@ public partial class Door : StaticBody3D, IDescription
     float y;
     float z;
 
-
     public override void _Ready()
     {
         player = GetNode<CharacterBody3D>("../../../../Player");
@@ -27,7 +26,7 @@ public partial class Door : StaticBody3D, IDescription
     }
     public string Description()
     {
-        return "Press <E> to open or close";
+        return "<E> to open or close";
     }
     public override void _Process(double delta)
     {

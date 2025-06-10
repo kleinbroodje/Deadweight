@@ -1,11 +1,12 @@
 [gd_scene load_steps=6 format=4 uid="uid://c6e4mfdq3qojk"]
 
-[ext_resource type="Texture2D" uid="uid://bifjtvltrebm1" path="res://resources/textures/crate.jpg" id="1_b66cd"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8hhd1"]
+load_path = "res://.godot/imported/crate.jpg-e0c5360e820420352b258f0503daa8db.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kdhk"]
 resource_name = "Material"
 cull_mode = 2
-albedo_texture = ExtResource("1_b66cd")
+albedo_texture = SubResource("CompressedTexture2D_8hhd1")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_l4kcu"]

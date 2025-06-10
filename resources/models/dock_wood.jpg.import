@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c46lfwh1gca4x"
-path.s3tc="res://.godot/imported/wheel_Wood093_4K-JPG_Color.jpg-15c5d773eeab612c2b994cddad2756dc.s3tc.ctex"
+uid="uid://ceqxv6ab6tav1"
+path.s3tc="res://.godot/imported/dock_wood.jpg-ce621e6519683aae671444e3f9f0bf50.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "edada1f45ea817f3c5934fe277ca74ef"
+"md5": "a2369bdc8838a8ad8017f6d01a3ae98c"
 }
 
 [deps]
 
-source_file="res://resources/textures/wheel_Wood093_4K-JPG_Color.jpg"
-dest_files=["res://.godot/imported/wheel_Wood093_4K-JPG_Color.jpg-15c5d773eeab612c2b994cddad2756dc.s3tc.ctex"]
+source_file="res://resources/models/dock_wood.jpg"
+dest_files=["res://.godot/imported/dock_wood.jpg-ce621e6519683aae671444e3f9f0bf50.s3tc.ctex"]
 
 [params]
 

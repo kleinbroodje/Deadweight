@@ -11,10 +11,11 @@ public partial class Player : CharacterBody3D
 	public const float waterHeight = 1.0f;
 	public const float wheelAccel = 0.07f;
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
-	public const float sensAt1280 = 0.0025f;
+	public const float sensAt1280 = 0.0012f;
 	public float resRatio = (float)ProjectSettings.GetSetting("display/window/size/viewport_width") / 1280.0f;
 	public float sens;
-	public float CameraMaxAngle;
+	public int stretchRatio;
+	public float cameraMaxAngle;
 
 	// necessary misc nodes
 	Camera3D camera;
@@ -25,13 +26,19 @@ public partial class Player : CharacterBody3D
 	Node3D holder;
 	RigidBody3D heldObject;
 	Wheel wheel;
+	SubViewportContainer container;
 
 	// methods
 	public override void _Ready()
 	{
-		sens = sensAt1280 / resRatio;
+		// player camera, sensitivity, movement etc.
+		container = GetNode<SubViewportContainer>("../../../../SubViewportContainer");
+		stretchRatio = container.StretchShrink;
+		sens = sensAt1280 / resRatio * stretchRatio;
 		FloorMaxAngle = Mathf.DegToRad(60);
-		CameraMaxAngle = Mathf.DegToRad(90);
+		cameraMaxAngle = Mathf.DegToRad(90);
+
+		// other nodes
 		camera = GetNode<Camera3D>("Camera");
 		raycast = GetNode<RayCast3D>("Camera/Raycast");
 		infoText = GetNode<Label>("/root/Main/CanvasLayer/UI/InfoText") as InfoText;
@@ -45,7 +52,7 @@ public partial class Player : CharacterBody3D
 		{
 			RotateY(-motion.Relative.X * sens);
 			camera.RotateX(-motion.Relative.Y * sens);
-			camera.Rotation = new Vector3(Mathf.Clamp(camera.Rotation.X, -CameraMaxAngle, CameraMaxAngle), camera.Rotation.Y, camera.Rotation.Z);
+			camera.Rotation = new Vector3(Mathf.Clamp(camera.Rotation.X, -cameraMaxAngle, cameraMaxAngle), camera.Rotation.Y, camera.Rotation.Z);
 		}
 		else if (Input.IsActionJustPressed("interact"))
 		{

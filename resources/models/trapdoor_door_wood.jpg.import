@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bifjtvltrebm1"
-path.s3tc="res://.godot/imported/crate.jpg-e0c5360e820420352b258f0503daa8db.s3tc.ctex"
+uid="uid://bsb55purrxvu5"
+path.s3tc="res://.godot/imported/trapdoor_door_wood.jpg-a22446a6eb4d4438913def5fc389ff36.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "fde92df2c5f1e58dbea9bb45922b99f0"
+"md5": "023b19c0b460cbdd661b8689dad32ace"
 }
 
 [deps]
 
-source_file="res://resources/textures/crate.jpg"
-dest_files=["res://.godot/imported/crate.jpg-e0c5360e820420352b258f0503daa8db.s3tc.ctex"]
+source_file="res://resources/models/trapdoor_door_wood.jpg"
+dest_files=["res://.godot/imported/trapdoor_door_wood.jpg-a22446a6eb4d4438913def5fc389ff36.s3tc.ctex"]
 
 [params]
 

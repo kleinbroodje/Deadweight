@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4suphxexk2ix"
-path.s3tc="res://.godot/imported/stone.jpg-8096fc30f79a6d0774417bebcff1b1c9.s3tc.ctex"
+uid="uid://dc51si27gajxe"
+path.s3tc="res://.godot/imported/door_door_wood.jpg-c29ae748645a58455fc70e2aaee5cb7d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "6f36c80c09c28050ab029abd6f3d7196"
+"md5": "023b19c0b460cbdd661b8689dad32ace"
 }
 
 [deps]
 
-source_file="res://resources/textures/stone.jpg"
-dest_files=["res://.godot/imported/stone.jpg-8096fc30f79a6d0774417bebcff1b1c9.s3tc.ctex"]
+source_file="res://resources/models/door_door_wood.jpg"
+dest_files=["res://.godot/imported/door_door_wood.jpg-c29ae748645a58455fc70e2aaee5cb7d.s3tc.ctex"]
 
 [params]
 
