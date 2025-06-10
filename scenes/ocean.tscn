@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c46lfwh1gca4x" path="res://resources/textures/wheel_Wood093_4K-JPG_Color.jpg" id="10_46w5d"]
 [ext_resource type="PackedScene" uid="uid://bwjoef85kaur7" path="res://resources/models/dock.glb" id="12_vkfeh"]
 [ext_resource type="PackedScene" uid="uid://c6e4mfdq3qojk" path="res://scenes/crate.tscn" id="13_6ti71"]
-[ext_resource type="Texture2D" uid="uid://xsmmxjbc8qg8" path="res://resources/textures/wood.jpg" id="14_nnddo"]
+[ext_resource type="Texture2D" uid="uid://cdn6ylrha33p0" path="res://resources/textures/wood.jpg" id="14_nnddo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fiuhb"]
 
