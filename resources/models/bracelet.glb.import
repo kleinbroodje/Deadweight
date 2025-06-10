@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://xo702aosemku"
-path="res://.godot/imported/crate.glb-e75fc37da16f4691c28a0bada87b93b3.scn"
+uid="uid://cfi2urswx0qj"
+path="res://.godot/imported/bracelet.glb-c19901d4c74fdde4ab61707fabeec39d.scn"
 
 [deps]
 
-source_file="res://resources/crate.glb"
-dest_files=["res://.godot/imported/crate.glb-e75fc37da16f4691c28a0bada87b93b3.scn"]
+source_file="res://resources/models/bracelet.glb"
+dest_files=["res://.godot/imported/bracelet.glb-c19901d4c74fdde4ab61707fabeec39d.scn"]
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="Node3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

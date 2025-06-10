@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b48siqv47fnka"
-path.s3tc="res://.godot/imported/ship_cloth.jpg-3a822e25ac445ed3e37fbc18b9e3245f.s3tc.ctex"
+uid="uid://bp1up3otv84uc"
+path.s3tc="res://.godot/imported/door_wood.jpg-f0706dd5c572a86526ed239729900e30.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cdcf17ce5196dfdc146f9666314eadd3"
+"md5": "bcddf9cc2e68f99665cb81b1112e69bb"
 }
 
 [deps]
 
-source_file="res://resources/ship/ship_cloth.jpg"
-dest_files=["res://.godot/imported/ship_cloth.jpg-3a822e25ac445ed3e37fbc18b9e3245f.s3tc.ctex"]
+source_file="res://resources/textures/door_wood.jpg"
+dest_files=["res://.godot/imported/door_wood.jpg-f0706dd5c572a86526ed239729900e30.s3tc.ctex"]
 
 [params]
 

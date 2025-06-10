@@ -1,19 +1,17 @@
-[gd_scene load_steps=70 format=4 uid="uid://c8sg13jj0qney"]
+[gd_scene load_steps=68 format=4 uid="uid://c8sg13jj0qney"]
 
 [ext_resource type="Script" uid="uid://cn5fe1ntajd11" path="res://scripts/Ocean.gd" id="1_sup3w"]
 [ext_resource type="PackedScene" uid="uid://b02v7i4yoyh35" path="res://scenes/player.tscn" id="2_fiuhb"]
 [ext_resource type="Script" uid="uid://bw1brvb7xh6an" path="res://scripts/Ship.cs" id="2_ogne1"]
-[ext_resource type="Texture2D" uid="uid://b48siqv47fnka" path="res://resources/ship/ship_cloth.jpg" id="3_vjho5"]
-[ext_resource type="Texture2D" uid="uid://lmqnwigiafq1" path="res://resources/ship/ship_wood.jpg" id="4_4imn2"]
+[ext_resource type="Texture2D" uid="uid://b48siqv47fnka" path="res://resources/textures/cloth.jpg" id="3_vjho5"]
 [ext_resource type="Script" path="res://scripts/CustomOcean.cs" id="4_a1ohp"]
 [ext_resource type="Shader" uid="uid://b6iiesqpinnr4" path="res://shaders/CustomOcean.gdshader" id="6_vjho5"]
 [ext_resource type="Script" uid="uid://b7mc34rohnudp" path="res://scripts/Door.cs" id="7_6ti71"]
 [ext_resource type="Script" uid="uid://cvvr8v1bsi4fa" path="res://scripts/Wheel.cs" id="8_tv676"]
-[ext_resource type="Texture2D" uid="uid://dh4g0kdo2v8yl" path="res://resources/ship/door_door_wood.jpg" id="9_pkxcc"]
-[ext_resource type="Texture2D" uid="uid://omwujpohw7w0" path="res://resources/decor/wheel_Wood093_4K-JPG_Color.jpg" id="10_46w5d"]
-[ext_resource type="PackedScene" uid="uid://bwjoef85kaur7" path="res://resources/dock.glb" id="12_vkfeh"]
+[ext_resource type="Texture2D" uid="uid://c46lfwh1gca4x" path="res://resources/textures/wheel_Wood093_4K-JPG_Color.jpg" id="10_46w5d"]
+[ext_resource type="PackedScene" uid="uid://bwjoef85kaur7" path="res://resources/models/dock.glb" id="12_vkfeh"]
 [ext_resource type="PackedScene" uid="uid://c6e4mfdq3qojk" path="res://scenes/crate.tscn" id="13_6ti71"]
-[ext_resource type="Texture2D" uid="uid://bey7kskopafvc" path="res://resources/ship/trapdoor_door_wood.jpg" id="14_nnddo"]
+[ext_resource type="Texture2D" uid="uid://xsmmxjbc8qg8" path="res://resources/textures/wood.jpg" id="14_nnddo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fiuhb"]
 
@@ -251,7 +249,7 @@ points = PackedVector3Array(1, 1, 1, 1, 1, -1, -1, 1, 1, 1, -1, 1, 1, -1, -1, -1
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5he5d"]
 resource_name = "Material"
 cull_mode = 2
-albedo_texture = ExtResource("9_pkxcc")
+albedo_texture = ExtResource("14_nnddo")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_32gsm"]
@@ -333,7 +331,7 @@ points = PackedVector3Array(-1.10712, -1.6739, -0.175643, -1.10712, -1.6739, 0.1
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46w5d"]
 resource_name = "Material"
 cull_mode = 2
-albedo_texture = ExtResource("4_4imn2")
+albedo_texture = ExtResource("14_nnddo")
 roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv676"]
@@ -661,7 +659,7 @@ transform = Transform3D(0.533041, 0, 0, 0, 0.533041, 0, 0, 0, 0.0588819, 0, 0, 0
 shape = SubResource("ConvexPolygonShape3D_x7e5j")
 
 [node name="Player" parent="." instance=ExtResource("2_fiuhb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.2382, 8.23909, -1.71277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7907, 4.62762, -1.71277)
 
 [node name="Ship" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
@@ -792,8 +790,8 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125738, 0.000145912)
 shape = SubResource("ConvexPolygonShape3D_yc4ip")
 
-[node name="dock" parent="." instance=ExtResource("12_vkfeh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.731, 1.18875, -0.992328)
-
 [node name="crate" parent="." instance=ExtResource("13_6ti71")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1581, 4.51996, 0.932846)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6069, 4.51996, 6.88203)
+
+[node name="dock" parent="." instance=ExtResource("12_vkfeh")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -15.7192, 0.908672, 0.0647621)

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bey7kskopafvc"
-path.s3tc="res://.godot/imported/trapdoor_door_wood.jpg-4b330c38a0017bf9ec8c37a4d67cf046.s3tc.ctex"
+uid="uid://c46lfwh1gca4x"
+path.s3tc="res://.godot/imported/wheel_Wood093_4K-JPG_Color.jpg-15c5d773eeab612c2b994cddad2756dc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "bcddf9cc2e68f99665cb81b1112e69bb"
+"md5": "edada1f45ea817f3c5934fe277ca74ef"
 }
 
 [deps]
 
-source_file="res://resources/ship/trapdoor_door_wood.jpg"
-dest_files=["res://.godot/imported/trapdoor_door_wood.jpg-4b330c38a0017bf9ec8c37a4d67cf046.s3tc.ctex"]
+source_file="res://resources/textures/wheel_Wood093_4K-JPG_Color.jpg"
+dest_files=["res://.godot/imported/wheel_Wood093_4K-JPG_Color.jpg-15c5d773eeab612c2b994cddad2756dc.s3tc.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ysw0wcw72f3l"
-path="res://.godot/imported/door.glb-0fc0578e97f4289bac5fe3ae2f005419.scn"
+uid="uid://bc67cytwoybog"
+path="res://.godot/imported/trapdoor.glb-6b95f16ac30134b9db5ce16dbe01dcb6.scn"
 
 [deps]
 
-source_file="res://resources/ship/door.glb"
-dest_files=["res://.godot/imported/door.glb-0fc0578e97f4289bac5fe3ae2f005419.scn"]
+source_file="res://resources/models/trapdoor.glb"
+dest_files=["res://.godot/imported/trapdoor.glb-6b95f16ac30134b9db5ce16dbe01dcb6.scn"]
 
 [params]
 

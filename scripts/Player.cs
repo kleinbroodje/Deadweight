@@ -11,7 +11,7 @@ public partial class Player : CharacterBody3D
 	public const float waterHeight = 1.0f;
 	public const float wheelAccel = 0.07f;
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
-	public const float sensAt1280 = 0.0012f;
+	public const float sensAt1280 = 0.0025f;
 	public float resRatio = (float)ProjectSettings.GetSetting("display/window/size/viewport_width") / 1280.0f;
 	public float sens;
 	public float CameraMaxAngle;

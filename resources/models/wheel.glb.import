@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cfi2urswx0qj"
-path="res://.godot/imported/bracelet.glb-cb40524cd895d9f62b46c3fe7546b140.scn"
+uid="uid://0txf6pvkyppp"
+path="res://.godot/imported/wheel.glb-9120f5e4cc75dc33cea63f5203f6bd8c.scn"
 
 [deps]
 
-source_file="res://resources/decor/bracelet.glb"
-dest_files=["res://.godot/imported/bracelet.glb-cb40524cd895d9f62b46c3fe7546b140.scn"]
+source_file="res://resources/models/wheel.glb"
+dest_files=["res://.godot/imported/wheel.glb-9120f5e4cc75dc33cea63f5203f6bd8c.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

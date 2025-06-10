@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://omwujpohw7w0"
-path.s3tc="res://.godot/imported/wheel_Wood093_4K-JPG_Color.jpg-a05cf73bdcd18a59abe9758f688aadbf.s3tc.ctex"
+uid="uid://b4suphxexk2ix"
+path.s3tc="res://.godot/imported/stone.jpg-8096fc30f79a6d0774417bebcff1b1c9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "edada1f45ea817f3c5934fe277ca74ef"
+"md5": "6f36c80c09c28050ab029abd6f3d7196"
 }
 
 [deps]
 
-source_file="res://resources/decor/wheel_Wood093_4K-JPG_Color.jpg"
-dest_files=["res://.godot/imported/wheel_Wood093_4K-JPG_Color.jpg-a05cf73bdcd18a59abe9758f688aadbf.s3tc.ctex"]
+source_file="res://resources/textures/stone.jpg"
+dest_files=["res://.godot/imported/stone.jpg-8096fc30f79a6d0774417bebcff1b1c9.s3tc.ctex"]
 
 [params]
 

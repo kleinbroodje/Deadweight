@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh4g0kdo2v8yl"
-path.s3tc="res://.godot/imported/door_door_wood.jpg-ddc67af861dcc4e088893c914aadcefe.s3tc.ctex"
+uid="uid://3akxa3b7prgv"
+path.s3tc="res://.godot/imported/dock_StoneBricksSplitface001_COL_1K.jpg-c8f25f28ee20004b208dfecc958d46f6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "bcddf9cc2e68f99665cb81b1112e69bb"
+"md5": "f3fafbd0b76203223eaa8db7817f1076"
 }
 
 [deps]
 
-source_file="res://resources/ship/door_door_wood.jpg"
-dest_files=["res://.godot/imported/door_door_wood.jpg-ddc67af861dcc4e088893c914aadcefe.s3tc.ctex"]
+source_file="res://resources/models/dock_StoneBricksSplitface001_COL_1K.jpg"
+dest_files=["res://.godot/imported/dock_StoneBricksSplitface001_COL_1K.jpg-c8f25f28ee20004b208dfecc958d46f6.s3tc.ctex"]
 
 [params]
 
